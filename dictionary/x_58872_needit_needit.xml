@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="5" type="collection">
         <element label="New1" max_length="40" name="new" type="string"/>
         <element label="New Field 1" max_length="40" name="new_feild_1" type="integer"/>
         <element label="New Field 2" max_length="40" name="new_feild_2" type="integer"/>
         <element label="New Date" max_length="40" name="u_glide_date_1" type="glide_date"/>
         <element label="Type" max_length="40" name="u_new_field_3" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -25,6 +26,7 @@
                 <element label="Legal2" sequence="5" value="legal2"/>
                 <element label="Your Department Choice1" sequence="6" value="your_choice1"/>
                 <element label="Your Department Choice2" sequence="7" value="your_choice2"/>
+                <element label="Other" sequence="8" value="other"/>
             </choice>
         </element>
         <element label="When Needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
