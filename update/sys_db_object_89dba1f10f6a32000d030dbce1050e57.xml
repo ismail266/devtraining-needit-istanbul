@@ -9,7 +9,7 @@
         <create_access>false</create_access>
         <create_access_controls>false</create_access_controls>
         <delete_access>false</delete_access>
-        <extension_model>class</extension_model>
+        <extension_model/>
         <is_extendable>false</is_extendable>
         <label>Sh$pwd Enrollment Snapshot</label>
         <live_feed_enabled>false</live_feed_enabled>
