@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>tailor</id>
+        <internal>false</internal>
+        <link/>
+        <name>tailor</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-08 11:28:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>9011ecfd4fda030000774aa28110c73e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>tailor</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_9011ecfd4fda030000774aa28110c73e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-08 11:30:11</sys_updated_on>
+        <template><![CDATA[<body>
+    <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
+body {
+	background: url(../img/stripes-bg.png);
+	font-family: 'Roboto', arial;
+}
+div#job_order_form input {
+	width: 97%;
+	padding: 1%;
+	font-family: 'Roboto', arial;
+}
+div#job_order_form select {
+	width: 100%;
+	padding: 1%;
+}
+ul.ss-choices {
+	padding-left: 0;
+	margin: 0;
+}
+form.form-horizontal tr.jobpostbtn td {
+    width: 100%;
+}
+div#job_order_form button {
+    background: #2674ec;
+    border: none;
+    padding: 1% 5%;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+    margin-left: 50.5%;
+}
+div#job_order_form button:nth-child(2) {
+    margin-left: 1% !important;
+}
+div#job_order_form li.ss-choice-item input {
+	width: 10%;
+	margin-top: 3%;
+}
+div#job_order_form textarea {
+	width: 99%;
+}
+div#job_order_form tr:nth-child(3) td:first-child label {
+/*position: relative;
+    top: -177px;*/
+}
+form.form-horizontal tr {
+	display: block;
+	margin-bottom: 2%;
+	width: 100%;
+	float: left;
+}
+form.form-horizontal td {
+	width: 40%;
+	float: left;
+}
+div#job_order_form {
+	width: 58%;
+	margin: auto;
+	background: #fff;
+	padding: 2%;
+	box-shadow: 0px 0px 8px 0px #ccc;
+}
+div#job_order_form label.control-label {
+	/* color: #0d2d84; */
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', arial;
+	font-size: 14px;
+}
+div#job_order_form label.control-label span {
+	color: #ef0e0e;
+}
+div#job_order_form h1 {
+	text-align: center;
+	color: #0d2d84;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	margin: 7% 7%;
+}
+div#job_order_form img {
+	width: 100%;
+}
+div#job_order_form form.form-horizontal table tbody tr td ul li {
+	list-style: none;
+}
+div#job_order_form textarea {
+	font-family: 'Roboto', arial;
+	width: 100%;
+}
+ul#sschoice {
+    height: 300px;
+    overflow: auto;
+}
+/*div#job_order_form form.form-horizontal table tbody tr td {
+    border: 1px solid #ccc;
+}*/
+</style>
+  <div id="job_order_form" class="main_job_order"> <img src="../img/logo.jpg">
+    <h1>MAIN-New Job Order </h1>
+    <form method="post" enctype="multipart/form-data" class="form-horizontal" action="job-process.php">
+      <table class="table table-bordered table-responsive">
+        <tr>
+          <td><label class="control-label">Client<span>*</span></label></td>
+                    <td><select name="client" id="client" aria-label="Client" aria-required="true" required="" class="required">
+              <option value="">--Select Client--</option>
+              <option value = "AEP">AEP</option><option value = "Ahelio">Ahelio</option><option value = "Alliance">Alliance</option><option value = "American Medical Equipment">American Medical Equipment</option><option value = "Ameriprise">Ameriprise</option><option value = "AmerisourceBergen">AmerisourceBergen</option><option value = "ARC">ARC</option><option value = "Ashland">Ashland</option><option value = "Auld">Auld</option><option value = "Battelle">Battelle</option><option value = "Cardinal Health">Cardinal Health</option><option value = "Cheryls Cookies">Cheryls Cookies</option><option value = "Choice Recovery">Choice Recovery</option><option value = "Climate Right">Climate Right</option><option value = "Columbus Regional Airport">Columbus Regional Airport</option><option value = "ComResource">ComResource</option><option value = "CVS">CVS</option><option value = "Direct">Direct</option><option value = "EDPS">EDPS</option><option value = "Eloquii">Eloquii</option><option value = "Fairfield County">Fairfield County</option><option value = "Fiserv">Fiserv</option><option value = "GCG">GCG</option><option value = "Gnoesis">Gnoesis</option><option value = "Handyman Matters">Handyman Matters</option><option value = "HP">HP</option><option value = "IGS">IGS</option><option value = "iSys">iSys</option><option value = "JetCoat">JetCoat</option><option value = "Kolbe">Kolbe</option><option value = "Lasership">Lasership</option><option value = "Law Firm">Law Firm</option><option value = "LD Management">LD Management</option><option value = "Liberty Mutual">Liberty Mutual</option><option value = "Lowes">Lowes</option><option value = "Luxottica">Luxottica</option><option value = "Marzetti">Marzetti</option><option value = "Mass Mutual">Mass Mutual</option><option value = "McGraw Hill">McGraw Hill</option><option value = "Merrill">Merrill</option><option value = "Metlife">Metlife</option><option value = "Momentive">Momentive</option><option value = "Morgan Stanley">Morgan Stanley</option><option value = "Nationwide">Nationwide</option><option value = "OneSight">OneSight</option><option value = "OSU">OSU</option><option value = "P&G">P&G</option><option value = "PCM">PCM</option><option value = "PetSmart">PetSmart</option><option value = "Plaza">Plaza</option><option value = "Portfolio Creative">Portfolio Creative</option><option value = "Quantum Health">Quantum Health</option><option value = "Rickenbacker">Rickenbacker</option><option value = "Roche">Roche</option><option value = "Roche Molecular Systems">Roche Molecular Systems</option><option value = "Sedgwick">Sedgwick</option><option value = "Solstice Sleep">Solstice Sleep</option><option value = "South Bloomfield PD">South Bloomfield PD</option><option value = "SPECIAL-One Off Client">SPECIAL-One Off Client</option><option value = "Superior Beverage">Superior Beverage</option><option value = "Taylor Communications">Taylor Communications</option><option value = "TEST">TEST</option><option value = "US Steel">US Steel</option><option value = "Vantiv">Vantiv</option><option value = "Ventana">Ventana</option><option value = "Vertiv">Vertiv</option><option value = "VF Corp">VF Corp</option><option value = "Webster Bank">Webster Bank</option><option value = "Worthington Industries">Worthington Industries</option><option value = "York RSG">York RSG</option><option value = "Zulily">Zulily</option>            </select></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Req Number<span>*</span></label></td>
+          <td><input type="number" name="reqnumber" onkeypress="javascript:return isNumber(event)" class="ss-q-short required" id="reqnumber" dir="auto" aria-label="Req Number" aria-required="true" required="" title="">
+            <span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span><span id="errorreq"></span></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Type of role<span>*</span></label></td>
+
+          <td><ul id="sschoice" class="ss-choices" role="radiogroup" aria-label="Type of role">
+              <li class="ss-choice-item">
+              <label> <span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Accounting/Finance" id="group_1974584541_1" role="radio" class="ss-q-radio" aria-label="Accounting/Finance" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Accounting/Finance</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Admin/Clerical" id="group_1974584541_2" role="radio" class="ss-q-radio" aria-label="Admin/Clerical" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Admin/Clerical</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Business Analyst" id="group_1974584541_3" role="radio" class="ss-q-radio" aria-label="Business Analyst" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Business Analyst</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Clinical Research" id="group_1974584541_4" role="radio" class="ss-q-radio" aria-label="Clinical Research" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Clinical Research</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Clinical Tech" id="group_1974584541_5" role="radio" class="ss-q-radio" aria-label="Clinical Tech" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Clinical Tech</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Customer Service" id="group_1974584541_6" role="radio" class="ss-q-radio" aria-label="Customer Service" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Customer Service</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Direct" id="group_1974584541_7" role="radio" class="ss-q-radio" aria-label="Direct" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Direct</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Engineering" id="group_1974584541_8" role="radio" class="ss-q-radio" aria-label="Engineering" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Engineering</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="HR" id="group_1974584541_9" role="radio" class="ss-q-radio" aria-label="HR" required="" aria-required="true">
+                </span> <span class="ss-choice-label">HR</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="IT Dev" id="group_1974584541_10" role="radio" class="ss-q-radio" aria-label="IT Dev" required="" aria-required="true">
+                </span> <span class="ss-choice-label">IT Dev</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="IT Support" id="group_1974584541_11" role="radio" class="ss-q-radio" aria-label="IT Support" required="" aria-required="true">
+                </span> <span class="ss-choice-label">IT Support</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Light Industrial" id="group_1974584541_12" role="radio" class="ss-q-radio" aria-label="Light Industrial" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Light Industrial</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Project Management" id="group_1974584541_13" role="radio" class="ss-q-radio" aria-label="Project Management" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Project Management</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Scientific" id="group_1974584541_14" role="radio" class="ss-q-radio" aria-label="Scientific" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Scientific</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Test" id="group_1974584541_15" role="radio" class="ss-q-radio" aria-label="Test" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Test</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Aquent" id="group_1974584541_16" role="radio" class="ss-q-radio" aria-label="Aquent" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Aquent</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Creative" id="group_1974584541_17" role="radio" class="ss-q-radio" aria-label="Creative" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Creative</span> </label>
+            </li>
+            </ul></td>
+        </tr>
+        <tr> 
+          <!--<td><label class="control-label">What would you like to do?<span>*</span></label></td>
+        <td>
+		<ul class="ss-choices" role="radiogroup" aria-label="What would you like to do?">
+		<li class="ss-choice-item">
+		<label>
+		<span class="ss-choice-item-control goog-inline-block">
+		<input type="radio" name="liketodo" checked="" value="Active" id="group_1730603953_1" role="radio" class="ss-q-radio" aria-label="Job Order-New" required="" aria-required="true">
+		</span>
+<span class="ss-choice-label">Job Order-New</span>
+</label></li></ul></td>--> 
+        </tr>
+        <tr>
+          <td><label class="control-label">Job Title<span>*</span></label></td>
+          <td><input type="text" name="jobtitle" class="ss-q-short required" id="jobtitle" dir="auto" aria-label="job title" aria-required="true" required="" title=""></td>
+        </tr>
+       <!-- <tr>
+          <td><label class="control-label">City, State<span>*</span></label></td>
+          <td><input type="text" name="citystate" class="ss-q-short required" id="citystate" dir="auto" aria-label="city state" aria-required="true" required="" title=""></td>
+        </tr> -->
+        <tr>
+          <td><label class="control-label">Full Location - Street Address</label></td>
+          <td><input type="text" name="address" class="ss-q-short required" id="address" dir="auto" aria-label="address" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Zip Code<span>*</span></label></td>
+          <td><input type="number" name="zip" class="ss-q-short required" onkeypress="javascript:return isNumber(event)" id="zip" dir="auto" aria-label="zip" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Pay Rate<span>*</span></label></td>
+          <td><input type="number" name="payrate" step="any" class="auto ss-q-short required" onkeypress="javascript:return isNumber(event)" id="payrate" autocomplete="off" dir="auto" aria-label="pay_rate" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Bill Rate<span>*</span></label></td>
+          <td><input type="number" name="billrate" step="any" class="ss-q-short required" onkeypress="javascript:return isNumber(event)" id="billrate" dir="auto" aria-label="bill_rate" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Start Date<span>*</span></label></td>
+          <td><input type="date" name="startdate" value="" class="ss-q-date required" dir="auto" id="startdate" aria-label="Start Date" aria-required="true" required=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">End Date</label></td>
+          <td><input type="date" name="enddate" value="" class="ss-q-date required" dir="auto" id="enddate" aria-label="enddate"></td>
+        </tr>
+        <!--<tr>
+          <td><label class="control-label">Submittal Deadline<span>*</span></label></td>
+          <td><input type="date" name="deadline" value="" class="ss-q-date required" dir="auto" id="deadline" aria-label="deadline" aria-required="true" required=""></td>
+        </tr>-->
+        <tr>
+          <td><label class="control-label">Job Description<span>*</span></label></td>
+          <td><textarea name="jobdesc" rows="8" cols="0" class="ss-q-long required" id="jobdesc" dir="auto" aria-label="Job Description" aria-required="true" required=""></textarea></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Number of openings<span>*</span></label></td>
+          <td><input type="number" name="noofopen" value="" onkeypress="javascript:return isNumber(event)" class="ss-q-short valid" id="noofopen" dir="auto" aria-label="Number of openings  Must be a number greater than or equal to 1" aria-required="true" required="" step="any" min="1.0" aria-valuemin="1.0" title="Must be a number greater than or equal to 1"></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Direct Send<span>*</span></label></td>
+          <td><ul class="ss-choices" role="radiogroup" aria-label="Direct Send">
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" value="Yes" id="group_1287613974_1" role="radio" class="ss-q-radio" aria-label="Yes" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Yes</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" value="No" id="group_1287613974_2" role="radio" class="ss-q-radio" aria-label="No" required="" aria-required="true">
+                </span> <span class="ss-choice-label">No</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" value="Hire off resume" id="group_1287613974_3" role="radio" class="ss-q-radio" aria-label="Hire off resume" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Hire off resume</span> </label>
+            </li>
+			  <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" value="Pass Thru" id="group_1287613974_4" role="radio" class="ss-q-radio" aria-label="Pass Thru" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Pass Thru</span> </label>
+            </li>
+            </ul></td>
+        </tr>
+        <!-- <tr>
+          <td><label class="control-label">Workers Comp Code</label></td>
+          <td><input type="text" name="wccode" class="ss-q-short required" id="address" dir="auto" aria-label="address" title=""></td>
+        </tr> -->
+        <tr>
+          <td><label class="control-label">Hiring Manager</label></td>
+          <td><input type="text" name="hirmanager" class="ss-q-short required" id="hirmanager" dir="auto" aria-label="hirmanager" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">VMS/Client Contact</label></td>
+          <td><input type="text" name="clientcontact" class="ss-q-short required" id="address" dir="auto" aria-label="vms" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Notes</label></td>
+          <td><textarea name="notes" rows="8" cols="0" class="ss-q-long valid" id="entry_867132953" dir="auto" aria-label="Notes"></textarea></td>
+        </tr>
+        <tr class="jobpostbtn">
+          <td colspan="2"><button type="submit" name="btnsave" class="btn btn-default" value="save">Save </button><button type="reset" name="reset" class="btn btn-default" value="cancel">Cancel</button></td>
+        </tr>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</script>
+        <script type="text/javascript">
+		
+  
+		function CheckReqNumber(){
+    var ReqNumber = document.getElementById('reqnumber');
+    if(reqnumber.value != "")
+    {
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var value = xmlhttp.responseText;
+               if(value.length > 1)
+                {
+                    ReqNumber.focus();
+                    confirm("Are you sure to overwrite the existing job");
+                }
+                else
+                {
+
+                }	
+            }
+          }
+        xmlhttp.open("GET","checkreq.php?q="+ReqNumber.value,true);
+        xmlhttp.send();
+    }
+}
+     function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+		alert("Not valid, Allow Only Numeric");//return false;
+		//this.value='';
+else{
+return true;
+    }
+	}
+    </script> 
+        <script type="text/javascript">
+function delete_id(id)
+{
+     if(confirm('Sure To Remove This Record ?'))
+     {
+        window.location.href='index.php?delete_id='+id;
+     }
+}
+</script> 
+        <script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+    </script>
+	<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("deadline").value = today;
+
+	
+	</script>
+
+<script>
+ 
+$(function(){
+ 
+	$('#jobtitle').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /['"‘’‚“”„/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/['"‘’‚“”„/]/gi, '');
+			$(this).val(no_spl_char);
+		}
+	});
+ 
+});
+ 
+ 
+</script>
+
+	<script type="text/javascript" language="javascript">
+
+$(function(){
+ 
+	$('#hirmanager').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /['"‘’‚“”„/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/['"‘’‚“”„/]/gi, '');
+			$(this).val(no_spl_char);
+		}
+	});
+ 
+});
+ 
+ 
+</script>
+
+	<script type="text/javascript" language="javascript">
+$(function(){
+ 
+	$('#jobdesc').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /['"’‘’‚“”„/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/['"’‘’‚“”„/]/gi, '');
+			$(this).val(no_spl_char);
+		}
+	});
+ 
+});
+	</script>
+
+
+	<script type="text/javascript" language="javascript">
+$(function(){
+ 
+	$('#entry_867132953').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /['"‘’‚“”„/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/['"‘’‚“”„/]/gi, '');
+			$(this).val(no_spl_char);
+		}
+	});
+ 
+});
+	</script>
+
+      </table>
+    </form>
+  </div>
+</body>]]></template>
+    </sp_widget>
+</record_update>

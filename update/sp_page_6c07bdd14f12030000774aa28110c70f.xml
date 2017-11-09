@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <css/>
+        <id>sample</id>
+        <internal>false</internal>
+        <public>false</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-07 04:27:28</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>6c07bdd14f12030000774aa28110c70f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sample</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_page_6c07bdd14f12030000774aa28110c70f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-07 04:27:28</sys_updated_on>
+        <title>Sample - Test Page</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=6c07bdd14f12030000774aa28110c70f"/>
+</record_update>

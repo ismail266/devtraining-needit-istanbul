@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	
+	c.addItem = function() {
+		c.server.update().then(function(response) {
+			c.data = {};			
+		})
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sample</id>
+        <internal>false</internal>
+        <link/>
+        <name>Sample</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	if(!input) 
+		return;
+	
+	var gr = new GlideRecord('x_58872_needit_sample');
+	gr.initialize();
+	gr.u_string_3 = input.client;
+	gr.u_string_4 = input.req_number;
+	gr.u_string_5 = input.type_of_role;
+	gr.u_string_6 = input.job_title;
+	gr.u_string_7 = input.full_location;
+	gr.u_string_8 = input.zip_code;
+	gr.u_string_9 = input.pay_rate;
+	gr.u_string_10 = input.bill_rate;
+	gr.u_string_11 = input.start_date;
+	gr.u_string_12 = input.end_date;
+	gr.u_string_13 = input.job_description;
+	gr.u_string_14 = input.number_of_openings;
+	gr.u_string_15 = input.direct_send;
+	gr.u_string_16 = input.hiring_manager;
+	gr.u_string_17 = input.vms_client_contact;
+	gr.u_string_18 = input.notes;
+	gr.insert();
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-07 04:27:28</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>2407bdd14f12030000774aa28110c70d</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>Sample</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_2407bdd14f12030000774aa28110c70d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-08 13:13:33</sys_updated_on>
+        <template><![CDATA[<style>
+body {
+	background: url(http://tmdev.tenaratechnologies.us/img/stripes-bg.png);
+	font-family: 'Roboto', arial;
+}
+div#job_order_form input {
+	padding: 1%;
+	font-family: 'Roboto', arial;
+}
+div#job_order_form select {
+	width: 100%;
+	padding: 1%;
+}
+ul.ss-choices {
+	padding-left: 0;
+	margin: 0;
+}
+form.form-horizontal tr.jobpostbtn td {
+    width: 100%;
+}
+div#job_order_form button {
+    background: #2674ec;
+    border: none;
+    padding: 1% 5%;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+    margin-left: 46.5%;
+}
+div#job_order_form button:nth-child(2) {
+    margin-left: 1% !important;
+}
+div#job_order_form textarea {
+	width: 99%;
+}
+div#job_order_form tr:nth-child(3) td:first-child label {
+/*position: relative;
+    top: -177px;*/
+}
+form.form-horizontal tr {
+	display: block;
+	margin-bottom: 2%;
+	width: 100%;
+	float: left;
+}
+form.form-horizontal td {
+	width: 40%;
+	float: left;
+}
+div#job_order_form {
+	width: 58%;
+	margin: auto;
+	background: #fff;
+	padding: 2%;
+	box-shadow: 0px 0px 8px 0px #ccc;
+}
+div#job_order_form label.control-label {
+	/* color: #0d2d84; */
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', arial;
+	font-size: 14px;
+}
+div#job_order_form label.control-label span {
+	color: #ef0e0e;
+}
+div#job_order_form h1 {
+	text-align: center;
+	color: #0d2d84;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	margin: 7% 7%;
+}
+div#job_order_form img {
+	width: 100%;
+}
+div#job_order_form form.form-horizontal table tbody tr td ul li {
+	list-style: none;
+}
+div#job_order_form textarea {
+	font-family: 'Roboto', arial;
+	width: 100%;
+}
+ul#sschoice {
+    height: 300px;
+    overflow: auto;
+}
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > tfoot > tr > td {
+  border: 1px solid #fff;
+}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857;
+    vertical-align: top;
+    border-top: 1px solid #fff;
+}
+form.form-horizontal {
+    margin-left: 35px;
+    margin-right: -90px;
+}
+</style>
+<div id="job_order_form" class="main_job_order"> <img src="http://tmdev.tenaratechnologies.us/img/logo.jpg">
+    <h1>MAIN-New Job Order </h1>
+    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+      <table class="table table-bordered table-responsive" style="border: none">
+        <tr>
+          <td><label class="control-label">Client<span>*</span></label></td>
+                    <td><select name="client" ng-model="c.data.client" id="client" aria-label="Client" aria-required="true" required="" class="required">
+              <option value="">--Select Client--</option>
+              <option value = "AEP">AEP</option><option value = "Ahelio">Ahelio</option><option value = "Alliance">Alliance</option><option value = "American Medical Equipment">American Medical Equipment</option><option value = "Ameriprise">Ameriprise</option><option value = "AmerisourceBergen">AmerisourceBergen</option><option value = "ARC">ARC</option><option value = "Ashland">Ashland</option><option value = "Auld">Auld</option><option value = "Battelle">Battelle</option><option value = "Cardinal Health">Cardinal Health</option><option value = "Cheryls Cookies">Cheryls Cookies</option><option value = "Choice Recovery">Choice Recovery</option><option value = "Climate Right">Climate Right</option><option value = "Columbus Regional Airport">Columbus Regional Airport</option><option value = "ComResource">ComResource</option><option value = "CVS">CVS</option><option value = "Direct">Direct</option><option value = "EDPS">EDPS</option><option value = "Eloquii">Eloquii</option><option value = "Fairfield County">Fairfield County</option><option value = "Fiserv">Fiserv</option><option value = "GCG">GCG</option><option value = "Gnoesis">Gnoesis</option><option value = "Handyman Matters">Handyman Matters</option><option value = "HP">HP</option><option value = "IGS">IGS</option><option value = "iSys">iSys</option><option value = "JetCoat">JetCoat</option><option value = "Kolbe">Kolbe</option><option value = "Lasership">Lasership</option><option value = "Law Firm">Law Firm</option><option value = "LD Management">LD Management</option><option value = "Liberty Mutual">Liberty Mutual</option><option value = "Lowes">Lowes</option><option value = "Luxottica">Luxottica</option><option value = "Marzetti">Marzetti</option><option value = "Mass Mutual">Mass Mutual</option><option value = "McGraw Hill">McGraw Hill</option><option value = "Merrill">Merrill</option><option value = "Metlife">Metlife</option><option value = "Momentive">Momentive</option><option value = "Morgan Stanley">Morgan Stanley</option><option value = "Nationwide">Nationwide</option><option value = "OneSight">OneSight</option><option value = "OSU">OSU</option><option value = "P&G">P&G</option><option value = "PCM">PCM</option><option value = "PetSmart">PetSmart</option><option value = "Plaza">Plaza</option><option value = "Portfolio Creative">Portfolio Creative</option><option value = "Quantum Health">Quantum Health</option><option value = "Rickenbacker">Rickenbacker</option><option value = "Roche">Roche</option><option value = "Roche Molecular Systems">Roche Molecular Systems</option><option value = "Sedgwick">Sedgwick</option><option value = "Solstice Sleep">Solstice Sleep</option><option value = "South Bloomfield PD">South Bloomfield PD</option><option value = "SPECIAL-One Off Client">SPECIAL-One Off Client</option><option value = "Superior Beverage">Superior Beverage</option><option value = "Taylor Communications">Taylor Communications</option><option value = "TEST">TEST</option><option value = "US Steel">US Steel</option><option value = "Vantiv">Vantiv</option><option value = "Ventana">Ventana</option><option value = "Vertiv">Vertiv</option><option value = "VF Corp">VF Corp</option><option value = "Webster Bank">Webster Bank</option><option value = "Worthington Industries">Worthington Industries</option><option value = "York RSG">York RSG</option><option value = "Zulily">Zulily</option>            </select></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Req Number<span>*</span></label></td>
+          <td><input ng-model="c.data.req_number" type="number" name="reqnumber" class="ss-q-short required" id="reqnumber" dir="auto" aria-label="Req Number" aria-required="true" required="" title="">
+            <span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span><span id="errorreq"></span></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Type of role<span>*</span></label></td>
+
+          <td><ul id="sschoice" class="ss-choices" role="radiogroup" aria-label="Type of role">
+              <li class="ss-choice-item">
+              <label> <span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" value="Accounting/Finance" id="group_1974584541_1" role="radio" class="ss-q-radio" aria-label="Accounting/Finance" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Accounting/Finance</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Admin/Clerical" id="group_1974584541_2" role="radio" class="ss-q-radio" aria-label="Admin/Clerical" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Admin/Clerical</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Business Analyst" id="group_1974584541_3" role="radio" class="ss-q-radio" aria-label="Business Analyst" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Business Analyst</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Clinical Research" id="group_1974584541_4" role="radio" class="ss-q-radio" aria-label="Clinical Research" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Clinical Research</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Clinical Tech" id="group_1974584541_5" role="radio" class="ss-q-radio" aria-label="Clinical Tech" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Clinical Tech</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Customer Service" id="group_1974584541_6" role="radio" class="ss-q-radio" aria-label="Customer Service" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Customer Service</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Direct" id="group_1974584541_7" role="radio" class="ss-q-radio" aria-label="Direct" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Direct</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Engineering" id="group_1974584541_8" role="radio" class="ss-q-radio" aria-label="Engineering" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Engineering</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="HR" id="group_1974584541_9" role="radio" class="ss-q-radio" aria-label="HR" required="" aria-required="true">
+                </span> <span class="ss-choice-label">HR</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="IT Dev" id="group_1974584541_10" role="radio" class="ss-q-radio" aria-label="IT Dev" required="" aria-required="true">
+                </span> <span class="ss-choice-label">IT Dev</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="IT Support" id="group_1974584541_11" role="radio" class="ss-q-radio" aria-label="IT Support" required="" aria-required="true">
+                </span> <span class="ss-choice-label">IT Support</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Light Industrial" id="group_1974584541_12" role="radio" class="ss-q-radio" aria-label="Light Industrial" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Light Industrial</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Project Management" id="group_1974584541_13" role="radio" class="ss-q-radio" aria-label="Project Management" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Project Management</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Scientific" id="group_1974584541_14" role="radio" class="ss-q-radio" aria-label="Scientific" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Scientific</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Test" id="group_1974584541_15" role="radio" class="ss-q-radio" aria-label="Test" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Test</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Aquent" id="group_1974584541_16" role="radio" class="ss-q-radio" aria-label="Aquent" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Aquent</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="typeofrole" ng-model="c.data.type_of_role" value="Creative" id="group_1974584541_17" role="radio" class="ss-q-radio" aria-label="Creative" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Creative</span> </label>
+            </li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Job Title<span>*</span></label></td>
+          <td><input ng-model="c.data.job_title" type="text" name="jobtitle" class="ss-q-short required" id="jobtitle" dir="auto" aria-label="job title" aria-required="true" required="" title=""></td>
+        </tr>
+       <!-- <tr>
+          <td><label class="control-label">City, State<span>*</span></label></td>
+          <td><input type="text" name="citystate" class="ss-q-short required" id="citystate" dir="auto" aria-label="city state" aria-required="true" required="" title=""></td>
+        </tr> -->
+        <tr>
+          <td><label class="control-label">Full Location - Street Address</label></td>
+          <td><input type="text" ng-model="c.data.full_location" name="address" class="ss-q-short required" id="address" dir="auto" aria-label="address" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Zip Code<span>*</span></label></td>
+          <td><input ng-model="c.data.zip_code" type="number" name="zip" class="ss-q-short required"  id="zip" dir="auto" aria-label="zip" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Pay Rate<span>*</span></label></td>
+          <td><input ng-model="c.data.pay_rate" type="number" name="payrate" step="any" class="auto ss-q-short required" id="payrate" autocomplete="off" dir="auto" aria-label="pay_rate" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Bill Rate<span>*</span></label></td>
+          <td><input ng-model="c.data.bill_rate" type="number" name="billrate" step="any" class="ss-q-short required" id="billrate" dir="auto" aria-label="bill_rate" aria-required="true" required="" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Start Date<span>*</span></label></td>
+          <td><input ng-model="c.data.start_date" type="date" name="startdate" value="" class="ss-q-date required" dir="auto" id="startdate" aria-label="Start Date" aria-required="true" required=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">End Date</label></td>
+          <td><input ng-model="c.data.end_date" type="date" name="enddate" value="" class="ss-q-date required" dir="auto" id="enddate" aria-label="enddate"></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Job Description<span>*</span></label></td>
+          <td><textarea ng-model="c.data.job_description" name="jobdesc" rows="8" cols="0" class="ss-q-long required" id="jobdesc" dir="auto" aria-label="Job Description" aria-required="true" required=""></textarea></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Number of openings<span>*</span></label></td>
+          <td><input ng-model="c.data.number_of_openings" type="number" name="noofopen" value="" class="ss-q-short valid" id="noofopen" dir="auto" aria-label="Number of openings  Must be a number greater than or equal to 1" aria-required="true" required="" step="any" min="1.0" aria-valuemin="1.0" title="Must be a number greater than or equal to 1"></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Direct Send<span>*</span></label></td>
+          <td><ul class="ss-choices" role="radiogroup" aria-label="Direct Send">
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" ng-model="c.data.direct_send" value="Yes" id="group_1287613974_1" role="radio" class="ss-q-radio" aria-label="Yes" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Yes</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" ng-model="c.data.direct_send" value="No" id="group_1287613974_2" role="radio" class="ss-q-radio" aria-label="No" required="" aria-required="true">
+                </span> <span class="ss-choice-label">No</span> </label>
+            </li>
+              <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" ng-model="c.data.direct_send" value="Hire off resume" id="group_1287613974_3" role="radio" class="ss-q-radio" aria-label="Hire off resume" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Hire off resume</span> </label>
+            </li>
+			  <li class="ss-choice-item">
+              <label><span class="ss-choice-item-control goog-inline-block">
+                <input type="radio" name="directsend" ng-model="c.data.direct_send" value="Pass Thru" id="group_1287613974_4" role="radio" class="ss-q-radio" aria-label="Pass Thru" required="" aria-required="true">
+                </span> <span class="ss-choice-label">Pass Thru</span> </label>
+            </li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Hiring Manager</label></td>
+          <td><input ng-model="c.data.hiring_manager" type="text" name="hirmanager" class="ss-q-short required" id="hirmanager" dir="auto" aria-label="hirmanager" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">VMS/Client Contact</label></td>
+          <td><input ng-model="c.data.vms_client_contact" type="text" name="clientcontact" class="ss-q-short required" id="address" dir="auto" aria-label="vms" title=""></td>
+        </tr>
+        <tr>
+          <td><label class="control-label">Notes</label></td>
+          <td><textarea ng-model="c.data.notes" name="notes" rows="8" cols="0" class="ss-q-long valid" id="entry_867132953" dir="auto" aria-label="Notes"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="submit" name="btnsave" class="btn btn-default" value="Add" ng-click="c.addItem();">Save </button><button type="reset" name="reset" class="btn btn-default" value="cancel">Cancel</button></td>
+        </tr>
+  </table>
+    </form>
+  </div>]]></template>
+    </sp_widget>
+</record_update>
